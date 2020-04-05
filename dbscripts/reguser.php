@@ -7,6 +7,7 @@
 	$qe = 0;
 	$res = 0;
 	$sql = 0;
+	$sqli = 0;
 	$result = 0;
 	$num = 0;
 	$reg_result = "";
@@ -26,7 +27,9 @@
  
      //добавляем в бд
      $sql = mysqli_query ($db, "INSERT INTO user(name, lastname, email, password) VALUES ('$name', '$lastname', '$email', '$password')");
-     //$result = mysqli_query($db, $sql);
+     $sqli = mysqli_query ($db, "INSERT INTO userole (iduser, idrole) VALUES (iduser, '$namerole')");
+
+	//$result = mysqli_query($db, $sql);
      if($sql)  
 		 	header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=0");
 
