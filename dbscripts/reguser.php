@@ -19,21 +19,31 @@
 		$lastname = $_POST['lastname'];
 		$password = $_POST['password'];
 		$email = $_POST['email'] ;
-//Добавить проверку существования пользователя по почтовому ящику - выполнить запрос Select и посмотреть сколько записей есть
- $res = mysqli_query( $db,"SELECT * FROM user WHERE email = '$email'") or die();
- $num = mysqli_num_rows($res);
- 
- if($num == 0) {
- 
-     //добавляем в бд
-     $sql = mysqli_query ($db, "INSERT INTO user(name, lastname, email, password) VALUES ('$name', '$lastname', '$email', '$password')");
-     $sqli = mysqli_query ($db, "INSERT INTO userole (iduser, idrole) VALUES (iduser, '$namerole')");
+        $role_id = $_POST['role_id'] ;
+        echo "роль - " . $role_id;
+        //Добавить проверку существования пользователя по почтовому ящику - выполнить запрос Select и посмотреть сколько записей есть
+        $res = mysqli_query( $db,"SELECT * FROM user WHERE email = '$email'") or die("ошибка");
+        $num = mysqli_num_rows($res);
 
-	//$result = mysqli_query($db, $sql);
-     if($sql)  
-		 	header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=0");
-
-    }
-	else  header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=1");
+        if($num == 0) {
+            //добавляем в бд
+            $sql = mysqli_query ($db, "INSERT INTO user(name, lastname, email, password) VALUES ('$name', '$lastname', '$email', '$password')");
+            
+            
+            if($sql)  
+            {
+                echo "добавили пользователя";
+                $user_id =  mysqli_insert_id($db);
+                echo "добавили пользователя - " . $user_id;
+                
+                $sql = mysqli_query ($db, "INSERT INTO userole (iduser, idrole) VALUES ('$user_id', '$role_id')");
+                if($sql)  
+                {
+                    echo "добавили роль";
+                    header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=0");
+                }
+            }
+        }
+        else  header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=1");
 	}
 ?>
