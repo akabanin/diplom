@@ -25,12 +25,13 @@
                </li>
             <li>
                 <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m2">
-                <a href="#"><i class="fa fa-cogs"></i>Доска объявлений</a>
+                <a href="index.php?r=ads"><i class="fa fa-cogs"></i>Доска объявлений</a>
                             </li>
             <li><a href="index.php?r=news"><i class="fa fa-th-list"></i>Новости</a></li>
-            <li><a href="#"><i class="fa fa-envelope-open"></i>Наши партнёры</a></li>
+            <li><a href="#"><i class="fa fa-envelope-open"></i>Просьбы</a></li>
 			<li><a href="#"><i class="fa fa-th-list"></i>Вопрос ответ</a></li>
-            <li><a href="index.php?r=reguserform"><i class="fa fa-envelope-open"></i>Вход/Регистрация</a></li>
+            <li><a href="index.php?r=reguserform"><i class="fa fa-envelope-open"></i>Регистрация</a></li>
+			  <li><a href="index.php?r=vhod"><i class="fa fa-envelope-open"></i>Вход</a></li>
         </ul>
     </nav>
 </header>

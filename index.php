@@ -18,6 +18,12 @@ if(!empty($_GET["r"]))
 		case "news":
 			$content = "content/news.php";
 		break;
+		case "ads":
+			$content = "content/ads.php";
+		break;
+		case "vhod":
+			$content = "content/vhod.php";
+		break;
 	}
 }
 else

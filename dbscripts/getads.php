@@ -8,7 +8,7 @@
 	$db = mysqli_connect($host, $user, $password, $database) or die("Ошибка соединения");
 	mysqli_select_db($db,"penzainvanews");
 		
-	$res = mysqli_query( $db, "SELECT id, name, content, date FROM `news`") or die();
+	$res = mysqli_query( $db, "SELECT ads.id, ads.name, ads.content, ads.date, ads.iduser, user.name, user.lastname FROM `ads` INNER JOIN user ON user.id= ads.iduser") or die();
 	$rows = mysqli_num_rows($res);
 	for ($i = 0 ; $i < $rows ; ++$i)
 	{
@@ -16,7 +16,7 @@
 		echo "<h1>".$row[1]."</h1>";
 		echo $row[2];
 		echo $row[3] ;
-		$picres = mysqli_query( $db, "SELECT link from `picture` where id in (SELECT idpicture FROM `picturenews` WHERE idnews=$row[0])") or die();
+		$picres = mysqli_query( $db, "SELECT link from `image` where id in (SELECT idimage FROM `adsimage` WHERE idads=$row[0])") or die();
 		$picsnum = mysqli_num_rows($picres);
 		for ($j = 0 ; $j < $picsnum ; ++$j)
 		{
@@ -25,7 +25,7 @@
 		}
 	}
 	{
-		$catres = mysqli_query( $db, "SELECT name from `category` where id in (SELECT idcategory FROM `newscategory` WHERE idcategory=$row[0])") or die();
+		$catres = mysqli_query( $db, "SELECT name from `acategory` where id in (SELECT idcategory FROM `adsacategory` WHERE idcategory=$row[0])") or die();
 		$catnum = mysqli_num_rows($catres);
 		for ($j = 0 ; $j < $catnum ; ++$j)
 		{
