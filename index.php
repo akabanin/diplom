@@ -24,6 +24,12 @@ if(!empty($_GET["r"]))
 		case "vhod":
 			$content = "content/vhod.php";
 		break;
+		case "requestdob":
+			$content = "content/requestdob.php";
+		break;
+		case "requestdobresult.php":
+		$content = "content/requestdobresult.php";
+		break;
 	}
 }
 else

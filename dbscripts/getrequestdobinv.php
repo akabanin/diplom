@@ -1,14 +1,19 @@
 <?php
 require_once 'connection.php'; // подключаем скрипт
  
-	$link = mysqli_connect ($host, $user, $password, $database
+	$link = mysqli_connect ($host, $user, $password, $database)
 	
 	 or die("Ошибка " . mysqli_error($link));
 	$sql = 0;
 	$res = 0;
+	$num = 0;
+	 $db = mysqli_connect($host, $user, $password, $database) or die("Ошибка соединения");
+	mysqli_select_db($db,"penzainvanews");
 	
-	  if (isset($_POST['sod'])) {
- 		$time = $_POST['name'];
+	  if (isset($_POST['sod'])) 
+	  {
+		$sod = $_POST['sod'];
+ 		$time = $_POST['time'];
 		
         if($num == 0) {
             //добавляем в бд
@@ -18,10 +23,10 @@ require_once 'connection.php'; // подключаем скрипт
             if($sql)  
             {
                 echo "Ваша просьба успешно добавлена";
+				header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=requestdobresult&result=0");
             }
         }
-        else  
-		{
-			   echo "Ваша просьба не может быть добавлена";
-		}
-?>
+        else  header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=requestdobresult&result=1");
+		
+	  }
+	  ?>
