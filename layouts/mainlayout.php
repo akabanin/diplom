@@ -4,12 +4,13 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="layouts/style.css" type="text/css"/>
         <meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" href="picture/emblem/icon.jpeg">
         <title>дипломный проект</title>
         
     </head>
     <body>
         <header>
-            <p>Шапка</p>
+            <p><h1>Вlife</h1></p>
         </header>
 		<menu>
 		
@@ -29,7 +30,7 @@
                             </li>
             <li><a href="index.php?r=news"><i class="fa fa-th-list"></i>Новости</a></li>
             <li><a href="index.php?r=requestdob"><i class="fa fa-envelope-open"></i>Просьбы</a></li>
-			<li><a href="#"><i class="fa fa-th-list"></i>Вопрос ответ</a></li>
+			<li><a href="index.php?r=questionanswer.php"><i class="fa fa-th-list"></i>Вопрос ответ</a></li>
             <li><a href="index.php?r=reguserform"><i class="fa fa-envelope-open"></i>Регистрация</a></li>
 			  <li><a href="index.php?r=vhod"><i class="fa fa-envelope-open"></i>Вход</a></li>
         </ul>
