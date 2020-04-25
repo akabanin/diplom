@@ -23,9 +23,7 @@
 			$pic = mysqli_fetch_row($picres);
 			echo "<br><img src='picture/".$pic[0]."' width='200' height='200'>";
 		}
-	}
-	{
-		$catres = mysqli_query( $db, "SELECT name from `category` where id in (SELECT idcategory FROM `newscategory` WHERE idcategory=$row[0])") or die();
+		$catres = mysqli_query( $db, "SELECT name from `category` where id in (SELECT idcategory FROM `newscategory` WHERE idnews=$row[0])") or die();
 		$catnum = mysqli_num_rows($catres);
 		for ($j = 0 ; $j < $catnum ; ++$j)
 		{
