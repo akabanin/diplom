@@ -40,7 +40,7 @@
 			$_SESSION["name"] = $arr_user["name"];
 			$_SESSION["lastname"] = $arr_user["lastname"];
 			$_SESSION["userID"] = $arr_user["id"];
-			header("Location: http://localhost/index.php");
+			header("Location: http://localhost/diplom/index.php");
 
 		}
     }

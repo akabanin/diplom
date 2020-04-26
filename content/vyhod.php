@@ -7,5 +7,5 @@ if (isset($_SESSION["IsVolunteer"]))
 	unset($_SESSION["IsVolunteer"]);
 if (isset($_SESSION["IsDisabled"]))
 	unset($_SESSION["IsDisabled"]);
-header("Location: http://localhost/index.php");
+header("Location: http://localhost/diplom/index.php");
 ?>

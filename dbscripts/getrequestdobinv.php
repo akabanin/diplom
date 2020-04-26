@@ -23,10 +23,10 @@ require_once 'connection.php'; // подключаем скрипт
             
             if($sql)  
             {
-				header("Location: http://".$_SERVER['HTTP_HOST']."\index.php?r=requestvyvod&result=0");
+				header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=requestvyvod&result=0");
             }
         }
-        else  header("Location: http://".$_SERVER['HTTP_HOST']."\index.php?r=requestvyvod&result=1");
+        else  header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=requestvyvod&result=1");
 		
 	  }
 	  ?>
