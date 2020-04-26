@@ -9,5 +9,8 @@
 			  <label for="time">Когда неодходимо выполнить</label>
 		  <input type="datetime-local" name="time" required>
 		</div>
-		<button type="submit">Отправить</button>
+				
+		  <button class="btn waves-effect waves-light" type="submit" name="action">Отправить
+    		<i class="material-icons right">send</i>
+    	</button>
 	</form>

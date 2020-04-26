@@ -13,6 +13,6 @@
 	for ($i = 0 ; $i < $rows ; ++$i)
 	{
 		$row = mysqli_fetch_row($res);
-		echo "<img src='picture/".$row[0]."' width='200' height='200'>";
+		echo "<img class='materialboxed' width='650' src='picture/".$row[0]."'>";
 	}
 ?>

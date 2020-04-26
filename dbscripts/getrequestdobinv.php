@@ -1,6 +1,7 @@
 <?php
+ session_start();
 require_once 'connection.php'; // подключаем скрипт
- 
+
 	$link = mysqli_connect ($host, $user, $password, $database)
 	
 	 or die("Ошибка " . mysqli_error($link));
@@ -14,19 +15,18 @@ require_once 'connection.php'; // подключаем скрипт
 	  {
 		$sod = $_POST['sod'];
  		$time = $_POST['time'];
-		
+		$userid = $_SESSION['userID'];
         if($num == 0) {
             //добавляем в бд
-            $sql = mysqli_query ($db, "INSERT INTO request(sod, time) VALUES ('$sod', '$time')");
+            $sql = mysqli_query ($db, "INSERT INTO request(sod, time, iduser) VALUES ('$sod', '$time', '$userid')");
             
             
             if($sql)  
             {
-                echo "Ваша просьба успешно добавлена";
-				header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=requestdobresult&result=0");
+				header("Location: http://".$_SERVER['HTTP_HOST']."\index.php?r=requestvyvod&result=0");
             }
         }
-        else  header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=requestdobresult&result=1");
+        else  header("Location: http://".$_SERVER['HTTP_HOST']."\index.php?r=requestvyvod&result=1");
 		
 	  }
 	  ?>

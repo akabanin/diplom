@@ -1,4 +1,4 @@
-  <h1>Вход</h1>
+  <h1>Авторизация</h1>
 				<form method="post" action="dbscripts/vhod.php">
     	
 	<div>
@@ -12,4 +12,6 @@
     </div>
 			
 			
-			 <button type="submit">Отправить</button>
+   <button class="btn waves-effect waves-light" type="submit" name="action">Войти
+    <i class="material-icons right">send</i>
+  </button>

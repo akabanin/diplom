@@ -1,6 +1,6 @@
  <?php
  	session_start();
- 	
+
 	if (isset($_POST['email'])&& isset($_POST['password'])) {
 		require_once 'connection.php'; // подключаем скрипт
  
@@ -26,17 +26,22 @@
 			
 			if($res['name']=='admin')
 			{
-				$_SESSION["email"] = $arr_user["email"];
 				$_SESSION["IsAdmin"] = true;
-				header("Location: http://localhost/index.php");
 			}
-			else
+			else if($res['name']=='volunteer')
 			{
-			    $_SESSION["email"] = $arr_user["email"];
-				$_SESSION["IsAdmin"] = false;
-				header("Location: http://localhost/index.php");
-			
+				$_SESSION["IsVolunteer"] = true;
 			}
+			else if($res['name']=='disabled')
+			{
+				$_SESSION["IsDisabled"] = true;
+			}
+			$_SESSION["email"] = $arr_user["email"];
+			$_SESSION["name"] = $arr_user["name"];
+			$_SESSION["lastname"] = $arr_user["lastname"];
+			$_SESSION["userID"] = $arr_user["id"];
+			header("Location: http://localhost/index.php");
+
 		}
     }
 

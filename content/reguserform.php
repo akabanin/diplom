@@ -35,8 +35,20 @@
             }
             ?>
         </select>
-<p>
 		
-		
-		<button type="submit">Отправить</button>
+		  <button class="btn waves-effect waves-light" type="submit" name="action">Отправить
+    		<i class="material-icons right">send</i>
+    	</button>
 	</form>
+<script>
+	  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
