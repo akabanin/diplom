@@ -31,7 +31,10 @@ if(!empty($_GET["r"]))
 		$content = "content/requestdobresult.php";
 		break;
 		case "questionanswer.php":
-		$content = "content/questionanswer.php";
+		$content = "content/questionanswerdob.php";
+		break;
+		case "getquestionanswerdobresult.php";
+		$content = "content/getquestionanswerdobresult.php";
 		break;
 	}
 }
