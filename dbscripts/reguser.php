@@ -27,7 +27,7 @@
 
         if($num == 0) {
             //добавляем в бд
-            $sql = mysqli_query ($db, "INSERT INTO user(name, lastname, email, password) VALUES ('$name', '$lastname', '$email', '$password')");
+            $sql = mysqli_query ($db, "INSERT INTO user(name, lastname, email, password) VALUES ('$name', '$lastname', '$email', '$password')");// or die("Ошибка добавления пользователя в БД");
             
             
             if($sql)  
@@ -40,10 +40,10 @@
                 if($sql)  
                 {
                     echo "добавили роль";
-                    header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=0");
+                    header("Location: http://".$_SERVER['HTTP_HOST']."\index.php?r=reguserresult&result=0");
                 }
             }
         }
-        else  header("Location: http://".$_SERVER['HTTP_HOST']."\diplom\index.php?r=reguserresult&result=1");
+        else  header("Location: http://".$_SERVER['HTTP_HOST']."\index.php?r=reguserresult&result=1");
 	}
 ?>

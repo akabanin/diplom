@@ -1,12 +1,10 @@
 <?php 
-$result ="";
-if(!empty($_GET['result']))
+if(isset($_GET['result']))
 {
-	echo $_GET['result'];
-	if($_GET['result'] == '0')
+	if($_GET['result'] === "0")
 		$result = "Вы успешно зарегистрированы!" ;
 	else
 		$result = "Что-то пошло не так!" ;
 }
 ?>
-<h1><?php $result?></h1>
+<h1><?php echo $result?></h1>

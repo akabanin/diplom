@@ -1,5 +1,6 @@
  <?php
-	session_start();
+ 	session_start();
+ 	
 	if (isset($_POST['email'])&& isset($_POST['password'])) {
 		require_once 'connection.php'; // подключаем скрипт
  
@@ -27,13 +28,13 @@
 			{
 				$_SESSION["email"] = $arr_user["email"];
 				$_SESSION["IsAdmin"] = true;
-				header("Location: http://localhost/diplom/index.php");
+				header("Location: http://localhost/index.php");
 			}
 			else
 			{
 			    $_SESSION["email"] = $arr_user["email"];
 				$_SESSION["IsAdmin"] = false;
-				header("Location: http://localhost/diplom/index.php");
+				header("Location: http://localhost/index.php");
 			
 			}
 		}

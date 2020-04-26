@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if(!empty($_GET["r"]))
 {
@@ -23,9 +24,15 @@ if(!empty($_GET["r"]))
 		break;
 		case "vhod":
 			$content = "content/vhod.php";
+		break;		
+		case "vyhod":
+			$content = "content/vyhod.php";
 		break;
 		case "requestdob":
 			$content = "content/requestdob.php";
+		break;
+		case "requestvyvod":
+			$content = "content/requestvyvodinv.php";
 		break;
 		case "requestdobresult.php":
 		$content = "content/requestdobresult.php";
@@ -37,12 +44,10 @@ if(!empty($_GET["r"]))
 }
 else
 	$content = "content/main.php";
-
-echo file_get_contents("layouts/mainlayout.php"); 
+require("layouts/mainlayout.php"); 
 if(!empty($content))
 	require($content); 
 else
 	echo "Страница не найдена!";
-echo file_get_contents("layouts/footerlayout.php"); 
-
+require("layouts/footerlayout.php"); 
 ?>

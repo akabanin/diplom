@@ -19,7 +19,7 @@ if($result)
         echo "<tr>";
             for ($j = 0 ; $j < 2 ; ++$j) 
 				echo "<td>$row[$j]</td>";
-		echo "<td><a href='http://localhost/diplom/content/requestvyvodvol.php?id=$row[0]'>Редактировать</td>";      
+		echo "<td><a href='http://localhost/content/requestvyvodinv.php?id=$row[0]'>Редактировать</td>";      
 	   echo "</tr>";
     }
     echo "</table>";

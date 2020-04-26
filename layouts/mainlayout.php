@@ -2,8 +2,10 @@
 <html>
     <head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="layouts/style.css" type="text/css"/>
-        <meta name="viewport" content="width=device-width" />
+		<!--<link rel="stylesheet" href="layouts/style.css" type="text/css"/>-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!--<meta name="viewport" content="width=device-width" />-->
 		<link rel="shortcut icon" href="picture/emblem/icon.jpeg">
         <title>дипломный проект</title>
         
@@ -29,10 +31,19 @@
                 <a href="index.php?r=ads"><i class="fa fa-cogs"></i>Доска объявлений</a>
                             </li>
             <li><a href="index.php?r=news"><i class="fa fa-th-list"></i>Новости</a></li>
-            <li><a href="index.php?r=requestdob"><i class="fa fa-envelope-open"></i>Просьбы</a></li>
+            <li><a href="index.php?r=requestvyvod"><i class="fa fa-envelope-open"></i>Просьбы</a></li>
 			<li><a href="index.php?r=questionanswer.php"><i class="fa fa-th-list"></i>Вопрос ответ</a></li>
-            <li><a href="index.php?r=reguserform"><i class="fa fa-envelope-open"></i>Регистрация</a></li>
-			  <li><a href="index.php?r=vhod"><i class="fa fa-envelope-open"></i>Вход</a></li>
+            <?php 
+                if(!isset($_SESSION["email"]))
+                {
+                    echo "<li><a href='index.php?r=reguserform'><i class='fa fa-envelope-open'></i>Регистрация</a></li>";
+                    echo "<li><a href='index.php?r=vhod'><i class='fa fa-envelope-open'></i>Вход</a></li>";
+                }
+                else
+                {
+                    echo "<li><a href='index.php?r=vyhod'><i class='fa fa-envelope-open'></i>Выход</a></li>";
+                }
+              ?>
         </ul>
     </nav>
 </header>
