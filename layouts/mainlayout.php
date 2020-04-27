@@ -19,7 +19,7 @@
     <div class="col s12">
       <nav>
         <div class="nav-wrapper teal lighten-2">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" class="brand-logo"><img src ="picture/emblem/position.jpeg"></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="index.php?r=main">Главная</a></li>
             <li><a href="index.php?r=photo">Фотогалерея</a></li>
