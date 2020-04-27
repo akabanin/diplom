@@ -20,6 +20,7 @@
       <nav>
         <div class="nav-wrapper teal lighten-2">
           <a href="#" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="index.php?r=main">Главная</a></li>
             <li><a href="index.php?r=photo">Фотогалерея</a></li>
@@ -41,8 +42,39 @@
           </ul>
         </div>
       </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.php?r=main">Главная</a></li>
+            <li><a href="index.php?r=photo">Фотогалерея</a></li>
+            <li><a href="index.php?r=ads">Доска объявлений</a></li>
+            <li><a href="index.php?r=news">Новости</a></li>
+            <li><a href="index.php?r=requestvyvod">Просьбы</a></li>
+            <li><a href="index.php?r=questionanswer.php"></i>Вопрос ответ</a></li>
+            <?php 
+                if(!isset($_SESSION["email"]))
+                {
+                    echo "<li><a href='index.php?r=reguserform'>Регистрация</a></li>";
+                    echo "<li><a href='index.php?r=vhod'></i>Вход</a></li>";
+                }
+                else
+                {
+                    echo "<li><a href='index.php?r=vyhod'></i>Выход</a></li>";
+                }
+              ?>
+          </ul>
     </div>
 </div>
 <div class="row">
     <div class="col s2"><p>реклама 1</p></div>
 <div class="col s8">
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
