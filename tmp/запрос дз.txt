@@ -1,6 +1,0 @@
-SELECT news.name, news.content, news.date, newscategory.idnews, newscategory.idcategory,category.id, category.name, picturenews.idnews, picturenews.idpicture, picture.id, picture.link FROM news, newscategory, category, picturenews, picture WHERE newscategory.idnews=newscategory.idcategory AND picturenews.idnews=picturenews.idpicture;
-
-
-SELECT news.name, news.content, news.date, newscategory.idnews, newscategory.idcategory,category.id, category.name, picturenews.idnews, picturenews.idpicture, picture.id, picture.link FROM news, newscategory, category, picturenews, picture WHERE newscategory.idnews=newscategory.idcategory JOIN picturenews.idnews=picturenews.idpicture;
-
-SELECT news.name, news.content, news.date, newscategory.idnews, newscategory.idcategory,category.id, category.name, picturenews.idnews, picturenews.idpicture, picture.id, picture.link FROM news, newscategory, category, picturenews, picture WHERE newscategory.idnews=newscategory.idcategory JOIN picturenews.idnews=idpicture; 
